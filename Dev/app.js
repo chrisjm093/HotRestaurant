@@ -4,6 +4,10 @@ const app = express();
 /* const PORT = 3000;  */
 const PORT = process.env.PORT || 3000;
 
+app.use(express.urlencoded({ extended: true}));
+app.use(express.json());
+
+
 app.listen(PORT, function () {
   console.log("Listening on Port! " + PORT);
 });
@@ -21,12 +25,20 @@ app.get("/reserve", function(req, res) {
 
 app.get("/tables", function(req, res) {
     res.sendFile(path.join(__dirname, "/Templates/tables.html"))
-})
+});
+
+app.get("/api/reservations", function(req, res){
+    return res.json(reservations);
+});
+
+app.get("/api/waitlist", function(req, res){
+    return res.json(waitList);
+});
 
 app.post("/api/reservations", function(req, res) {
     var newReservation = req.body;
 
-    newReservation.uniqueID = newreservation.name.replace(/\s+/g, "").toLowerCase();
+   // newReservation.uniqueID = newReservation.name.replace(/\s+/g, "").toLowerCase();
 
     if( reservations.length > 5 ){
         toWaitlist(newReservation)
