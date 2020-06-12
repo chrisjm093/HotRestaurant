@@ -13,37 +13,41 @@
 <body>
     
     <div class ="container">
-        <div class = "jumbotron">
+        <div class = "jumbotron text-center">
             <h1>6-Feet Restaurant</h1>
-            <h3>Welcome to our Restaurant.  There only five tables available at our restaurant.  Any addition will be added to our waiting list.</h3>
-            <button class="btn btn-danger btn-lg"><span class="fa fa-plus"></span>Make Reservation</button>
+            <h3>Current Reservations and Waiting List</h3>
+            <hr>
+            <a href="/reserve"></a><button class="btn btn-danger btn-lg"><span class="fa fa-plus"></span>Make Reservation</button>
+            <a href="/"></a><button class="btn btn-danger btn-lg"><span class="fa fa-plus"></span>Home</button>
     </div> 
     <div>
     <div class="row">
         <div class="col-lg-12">
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                <div class="panel-title">
-                    <h4>Current Reservations</h4>
+            <div class="card">
+                <div class="card-header">
+                    <h3><strong>Current Reservations</strong></h3>
                 </div>
-                <div class="panel-body" id="tableSelection">
 
-                </div>
+                <div class="card-body">
+                </div>        
+    
             </div>
-        </div>
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                <div class="panel-title">
-                    <h4>Waitlist</h4>
-                 
-                </div>
-                <div class="panel-body" id="waitlistSection">
 
+            <br>
+            <br>
+
+            <div class="card">
+                <div class="card-header">
+                    <h3><strong>Waiting List</strong></h3>
                 </div>
+
+                <div class="card-body">
+                </div>        
+    
             </div>
-            </div>
+            
         </div>
-        </div>
+        
     </div> 
    </div>
  </div>
