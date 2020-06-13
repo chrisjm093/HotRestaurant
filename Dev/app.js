@@ -40,8 +40,8 @@ app.post("/api/reservations", function(req, res) {
 
    // newReservation.uniqueID = newReservation.name.replace(/\s+/g, "").toLowerCase();
 
-    if( reservations.length > 5 ){
-        toWaitlist(newReservation)
+    if( reservations.length > 4 ){
+        waitList.push(newReservation);
        
     } else {
 
@@ -53,17 +53,12 @@ app.post("/api/reservations", function(req, res) {
 
 });
 
-function toWaitlist(newReservation){
-   
-    app.post("/api/waitlist", function(req, res) {
-      
 
-        waitList.push(newReservation);
+app.post("/api/waitlist", function(req, res) {
+        var waitList = req.body;
+
+        res.json(waitList);
         
-        res.json(newReservation);
-        
-        console.log(newReservation);
-       
-       
+        console.log(waitList); 
     })
-};
+
