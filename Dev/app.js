@@ -16,15 +16,15 @@ const waitList = [];
 const reservations = [];
 
 app.get("/", function(req, res) {
-    res.sendFile(path.join(__dirname, "/Templates/home.html"))
+    res.sendFile(path.join(__dirname, "./Templates/home.html"))
 });
 
 app.get("/reserve", function(req, res) {
-    res.sendFile(path.join(__dirname, "/Templates/reserve.html"))
+    res.sendFile(path.join(__dirname, "./Templates/reserve.html"))
 });
 
 app.get("/tables", function(req, res) {
-    res.sendFile(path.join(__dirname, "/Templates/tables.html"))
+    res.sendFile(path.join(__dirname, "./Templates/tables.html"))
 });
 
 app.get("/api/reservations", function(req, res){
@@ -40,8 +40,8 @@ app.post("/api/reservations", function(req, res) {
 
    // newReservation.uniqueID = newReservation.name.replace(/\s+/g, "").toLowerCase();
 
-    if( reservations.length > 5 ){
-        toWaitlist(newReservation)
+    if( reservations.length > 4 ){
+        waitList.push(newReservation);
        
     } else {
 
@@ -53,16 +53,12 @@ app.post("/api/reservations", function(req, res) {
 
 });
 
-function toWaitlist(newReservation){
-   
-    app.post("/api/waitlist", function(req, res) {
+
+app.post("/api/waitlist", function(req, res) {
+        var waitList = req.body;
+
+        res.json(waitList);
         
-        waitList.push(newReservation);
-        
-        res.json(newReservation);
-        
-        console.log(newReservation);
-       
-       
+        console.log(waitList); 
     })
-};
+

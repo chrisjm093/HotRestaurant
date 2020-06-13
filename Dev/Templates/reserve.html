@@ -80,7 +80,7 @@
                 name: $("#name").val().trim(),
                 phoneNumber: $("#phoneNumber").val().trim(),
                 email: $("#email").val().trim(),
-                uniqueID: $("#uniqueId").val().trim(),
+                uniqueId: $("#uniqueId").val().trim(),
             };
             console.log(newReservation);
             $.post("/api/reservations", newReservation)
