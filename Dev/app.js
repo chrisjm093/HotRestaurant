@@ -56,7 +56,8 @@ app.post("/api/reservations", function(req, res) {
 function toWaitlist(newReservation){
    
     app.post("/api/waitlist", function(req, res) {
-        
+      
+
         waitList.push(newReservation);
         
         res.json(newReservation);
