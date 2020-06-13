@@ -16,15 +16,15 @@ const waitList = [];
 const reservations = [];
 
 app.get("/", function(req, res) {
-    res.sendFile(path.join(__dirname, "./Templates/home.html"))
+    res.sendFile(path.join(__dirname, "/Templates/home.html"))
 });
 
 app.get("/reserve", function(req, res) {
-    res.sendFile(path.join(__dirname, "./Templates/reserve.html"))
+    res.sendFile(path.join(__dirname, "/Templates/reserve.html"))
 });
 
 app.get("/tables", function(req, res) {
-    res.sendFile(path.join(__dirname, "./Templates/tables.html"))
+    res.sendFile(path.join(__dirname, "/Templates/tables.html"))
 });
 
 app.get("/api/reservations", function(req, res){

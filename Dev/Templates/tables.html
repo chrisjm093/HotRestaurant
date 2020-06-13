@@ -17,8 +17,8 @@
             <h1>6-Feet Restaurant</h1>
             <h3>Current Reservations and Waiting List</h3>
             <hr>
-            <a href="../reserve"></a><button class="btn btn-danger btn-lg reserve"><span class="fa fa-plus"></span>Make Reservation</button>
-            <a href="../"></a><button class="btn btn-danger btn-lg home"><span class="fa fa-plus"></span>Home</button>
+            <a href="/reserve"><button class="btn btn-danger btn-lg reserve"><span class="fa fa-plus"></span>Make Reservation</button></a>
+            <a href="/"><button class="btn btn-danger btn-lg home"><span class="fa fa-plus"></span>Home</button></a>
     </div> 
 
     <div>
@@ -114,22 +114,6 @@
     })
 
 }
-
-//broken code
-    $("#reserve").on("click", function(event) {
-        event.preventDefault();
-        $.get("/reserve", function(data) {
-            console.log(data)
-        })
-    })
-
-    $("#home").on("click", function(event) {
-        event.preventDefault();
-        $.get("/", function(data) {
-            console.log(data)
-        })
-    })
-    
 
     renderReservations();
     renderWaitList();
